@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Income Expense Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 p-6">
+    <div class="bg-red-100 max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-4">
+      <h1 class="text-2xl font-bold text-center mb-4">
+        Income Expense Calculator
+      </h1>
+      <div class="mb-4">
+        <h2 class="text-xl font-semibold">
+          Balance: <span id="balance" class="font-normal">₹0</span>
+        </h2>
+        <div class="flex justify-between text-lg">
+          <p>
+            Total Income:
+            <span id="total-income" class="text-green-500">₹0</span>
+          </p>
+          <p>
+            Total Expense:
+            <span id="total-expense" class="text-red-500">₹0</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <input
+          id="description"
+          type="text"
+          placeholder="Description"
+          class="border rounded p-2 w-full mb-2"
+        />
+        <input
+          id="amount"
+          type="number"
+          placeholder="Amount"
+          class="border rounded p-2 w-full mb-2"
+        />
+        <div class="mb-2">
+          <label>
+            <input type="radio" name="type" value="income" checked /> Income
+          </label>
+          <label class="ml-4">
+            <input type="radio" name="type" value="expense" /> Expense
+          </label>
+        </div>
+        <button
+          id="add"
+          class="bg-yellow-100 font-bold text-gray-800 py-2 px-16 w-full rounded"
+        >
+          Add
+        </button>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-lg font-semibold">Filter:</h3>
+
+        <label>
+          <input type="radio" name="filter" value="all" checked /> All
+        </label>
+        <label class="ml-4">
+          <input type="radio" name="filter" value="income" /> Income
+        </label>
+        <label class="ml-4">
+          <input type="radio" name="filter" value="expense" /> Expense
+        </label>
+      </div>
+
+      <ul
+        id="list"
+        class="bg-gray-200 rounded p-2 max-h-96 overflow-y-auto"
+      ></ul>
+
+      <button
+        id="resetButton"
+        type="reset"
+        class="g-yellow-100 font-bold text-gray-800 py-2 px-16 w-full rounded"
+      >
+        Reset
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
